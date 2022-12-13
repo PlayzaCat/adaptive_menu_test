@@ -57,6 +57,12 @@ body {
 }
 
 
+
+.menu {
+  
+}
+
+
 *,*::after, *::before {
   box-sizing: inherit;
 }
@@ -69,14 +75,11 @@ body {
 .header { 
   background-color: #FFFFFF; 
   width: 320px;
+
+  transition: 1s;
+  transform: translateX(-100%);
  
-   &__inner{   /* почему не работает?" */
-    display: flex;
-    justify-content: space-between;
-    min-height: 88px;
-    align-items: center;}
- 
- }
+   }
 
 
 
@@ -91,7 +94,17 @@ body {
  .container {
   width: 320px;
   height: 100vh;
-  box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5)
+  box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.menu__open {
+  position: absolute;
+  margin: 20px;
+}
+
+
+.header_active {
+  transform: translateX(0%);
 }
 
 .header__inner {
@@ -154,29 +167,7 @@ body {
 
 
 
- .menu__close {
-  display: none;
-  
-}
 
-.menu__container {
-  display: none;
-  
-}
-
-.menu_open .menu__close {
-  display: block;
-  
-}
-
-.menu_open .menu__open {
-  display: none;
-}
-
-.menu_open .menu__container {
-  display: block;
-
-}
 
 
  /* Конец верхнего контейнера*/
@@ -188,7 +179,7 @@ body {
 
 /* Исчезающая часть! */
 .main_menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   width: 250px;
   height: 90%;
